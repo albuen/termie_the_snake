@@ -1,7 +1,7 @@
 #!/usr/local/bin/ruby
 load 'board.rb'
-
-require 'time'
+require 'curses'
+include Curses
 
 
 @board = Board.new
