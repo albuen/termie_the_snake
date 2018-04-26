@@ -124,7 +124,7 @@ class Game_play
       # @@board.win.clear
       @@board.win.refresh
       #
-      @@board.win.setpos(21,74)
+      @@board.win.setpos(21,72)
       @@board.win.addstr("PAUSED")
     end
   end
