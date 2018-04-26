@@ -1,1 +1,1 @@
-Termie the snake is a treminal snake game coded in ruby 
+Termie the snake is a terminal snake game coded in ruby.
