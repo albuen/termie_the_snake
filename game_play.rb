@@ -55,6 +55,13 @@ class Game_play
     end
     @@snake.del_last
   end
+  
+  def check_collision
+    #border collision
+    if(@@snake.head.x_pos == 0 || @@snake.head.y_pos == 0 || @@snake.head.x_pos == @@x-1 || @@snake.head.y_pos == @@y-1)
+      @game_over = true
+    end
+  end
 
   def player_move
     case getch

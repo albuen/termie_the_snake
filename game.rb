@@ -23,6 +23,7 @@ begin
       @game_play.add_food
       @game_play.move_snake
       @game_play.draw_snake
+      @game_play.check_collision
       @board.win.refresh
       @board.win.clear
       sleep(@game_play.game_speed)
