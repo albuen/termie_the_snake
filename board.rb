@@ -36,7 +36,7 @@ class Board
     @win.setpos(0, (cols-15))
     @win.addstr(" SCORE: "+@score.to_s+" ")
 
-    @win.setpos(42, (cols-20))
+    @win.setpos(42, (cols-21))
     @win.addstr(" ALBUEN JAN ROSELLO ")
   end
 end

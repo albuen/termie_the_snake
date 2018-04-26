@@ -29,6 +29,7 @@ class LinkedList
       @head = Node.new(@x,@y)
     end
   end
+
   def add_head(x, y)
     @prev_head = @head
     @head = Node.new(x,y)

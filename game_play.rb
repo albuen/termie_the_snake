@@ -30,10 +30,14 @@ class Game_play
 
   def ate_food
     if (@@snake.head.x_pos == @@food_x && @@snake.head.y_pos == @@food_y)
+      @@board.score+=1
+      @@board.level = ((@@board.score/10)+1)
       @@snake.append(@@direction)
       @@food_x = rand(1..(@@x - 2))
       @@food_y = rand(1..(@@y - 2))
-
+      if(@@board.score > 0 && (@@board.score%10) == 0)
+        @game_speed = (@game_speed*2)/3;
+      end
     end
   end
 
@@ -79,6 +83,22 @@ class Game_play
     end
   end
 
+  def paused_game
+
+    if @game_paused
+
+      sleep(0.1)
+      case getch
+      when " "
+        @game_paused = false
+      end
+      if @game_paused
+        paused_game
+      end
+    end
+
+  end
+
   def player_move
     case getch
     when ?W, ?w  #UP
@@ -99,6 +119,13 @@ class Game_play
       end
     when ?q  #RIGHT
       exit
+    when " "  #space = game_paused
+      @game_paused = true
+      # @@board.win.clear
+      @@board.win.refresh
+      #
+      @@board.win.setpos(21,74)
+      @@board.win.addstr("PAUSED")
     end
   end
 end

@@ -18,6 +18,7 @@ end
 begin
 
   while (@game_play.game_over == false)
+      @game_play.paused_game
       @board.drawBoard
       @game_play.player_move
       @game_play.add_food
