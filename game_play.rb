@@ -28,6 +28,15 @@ class Game_play
     }
   end
 
+  def ate_food
+    if (@@snake.head.x_pos == @@food_x && @@snake.head.y_pos == @@food_y)
+      @@snake.append(@@direction)
+      @@food_x = rand(1..(@@x - 2))
+      @@food_y = rand(1..(@@y - 2))
+  
+    end
+  end
+
   def draw_snake
     @node = @@snake.head
     @@board.win.setpos(@node.y_pos, @node.x_pos)
@@ -55,12 +64,13 @@ class Game_play
     end
     @@snake.del_last
   end
-  
+
   def check_collision
     #border collision
     if(@@snake.head.x_pos == 0 || @@snake.head.y_pos == 0 || @@snake.head.x_pos == @@x-1 || @@snake.head.y_pos == @@y-1)
       @game_over = true
     end
+
   end
 
   def player_move
