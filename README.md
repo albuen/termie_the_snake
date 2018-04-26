@@ -1,1 +1,1 @@
-# termie_the_snake
+Termie the snake is a treminal snake game coded in ruby 

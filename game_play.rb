@@ -9,7 +9,7 @@ class Game_play
   @@food_x = nil
   @@x = nil
   @@y = nil
-  def initialize(bord, s_Llist, height, width) #width and height of the specified window
+  def initialize(bord, s_Llist, height, width)
     @game_over = false
     @game_paused = false;
     @@board = bord
@@ -22,7 +22,7 @@ class Game_play
   end
 
   def add_food
-    @@board.win.setpos(@@food_y, @@food_x) #setpos(y, x)
+    @@board.win.setpos(@@food_y, @@food_x)
     @@board.win.attron(color_pair(COLOR_YELLOW)|A_NORMAL){
       @@board.win.addstr("@")
     }
@@ -93,6 +93,10 @@ class Game_play
         @game_paused = false
       end
       if @game_paused
+        @@board.win.clear
+        @@board.win.setpos(21,72)
+        @@board.win.addstr("PAUSED")
+        @@board.win.refresh
         paused_game
       end
     end
@@ -121,11 +125,6 @@ class Game_play
       exit
     when " "  #space = game_paused
       @game_paused = true
-      # @@board.win.clear
-      @@board.win.refresh
-      #
-      @@board.win.setpos(21,72)
-      @@board.win.addstr("PAUSED")
     end
   end
 end

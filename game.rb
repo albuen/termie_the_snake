@@ -7,7 +7,6 @@ require 'time'
 
 @board = Board.new
 @snake = LinkedList.new
-#lines = height : cols = width
 $i=0
 until $i >= 3  do
    @snake.append(1)
@@ -30,6 +29,12 @@ begin
       @board.win.clear
       sleep(@game_play.game_speed)
   end
+
+  @board.win.clear
+  @board.win.setpos(21,72)
+  @board.win.addstr("GAME OVER")
+  @board.win.refresh
+  sleep(1)
 
 ensure
   print "GAME OVER"
