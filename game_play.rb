@@ -33,7 +33,7 @@ class Game_play
       @@snake.append(@@direction)
       @@food_x = rand(1..(@@x - 2))
       @@food_y = rand(1..(@@y - 2))
-  
+
     end
   end
 
@@ -71,6 +71,12 @@ class Game_play
       @game_over = true
     end
 
+    @node = @@snake.head
+    while(@node = @node.next)
+      if(@@snake.head.x_pos == @node.x_pos && @@snake.head.y_pos == @node.y_pos)
+        @game_over = true
+      end
+    end
   end
 
   def player_move
