@@ -31,12 +31,11 @@ begin
   end
 
   @board.win.clear
-  @board.win.setpos(21,72)
+  @board.win.setpos(((lines-1)/2),((cols-1)/2))
   @board.win.addstr("GAME OVER")
   @board.win.refresh
   sleep(1)
 
 ensure
-  print "GAME OVER"
   Curses.close_screen
 end

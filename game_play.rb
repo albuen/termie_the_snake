@@ -94,7 +94,7 @@ class Game_play
       end
       if @game_paused
         @@board.win.clear
-        @@board.win.setpos(21,72)
+        @@board.win.setpos((@@y-1)/2,(@@x-1)/2)
         @@board.win.addstr("PAUSED")
         @@board.win.refresh
         paused_game

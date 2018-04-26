@@ -24,7 +24,7 @@ class Board
     curs_set(0)
     @win.box(?*, ?*)
 
-    @win.setpos(42, 0)
+    @win.setpos(lines-1, 0)
     @win.addstr(" [q] quit [space] pause [w] move UP [s] move DOWN [d] move RIGHT [a] move LEFT ")
 
     @win.setpos(0, ((cols/2)-12))
@@ -36,7 +36,7 @@ class Board
     @win.setpos(0, (cols-15))
     @win.addstr(" SCORE: "+@score.to_s+" ")
 
-    @win.setpos(42, (cols-21))
+    @win.setpos(lines-1 , (cols-21))
     @win.addstr(" ALBUEN JAN ROSELLO ")
   end
 end
